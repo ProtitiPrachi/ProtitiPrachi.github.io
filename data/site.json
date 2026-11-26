@@ -117,8 +117,8 @@
         "Developed a job portal web application with HTML, CSS, JavaScript and PHP.",
         "Stored jobs, applicants and accounts in a MySQL database."
       ],
-      "github": "",
-      "live": ""
+      "github": "https://github.com/DURJOYSAHA21/Job-Portal-Live-Demo",
+      "live": "hirehub.infinityfreeapp.com/"
     },
     {
       "name": "SkillHub",
@@ -137,8 +137,8 @@
         "Built a full-stack learning platform with a React and Next.js front end.",
         "Wrote the FastAPI backend on top of a PostgreSQL database."
       ],
-      "github": "",
-      "live": ""
+      "github": "https://github.com/DURJOYSAHA21/skillhub_prototype",
+      "live": "https://skillhubprototype-frontend.vercel.app/"
     },
     {
       "name": "Zoo Management System",
@@ -156,7 +156,7 @@
         "Built modules for visitor ticketing, membership and transaction management.",
         "Linked the database to a user-friendly WinForms interface for day-to-day zoo operations."
       ],
-      "github": "",
+      "github": "https://github.com/ProtitiPrachi/Zoo-Management",
       "live": ""
     },
     {
