@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { profile } from "../data/content";
-import CseScene from "./CseScene";
 import Marquee from "./Marquee";
 
 const letter = {
@@ -55,6 +54,7 @@ function RoleRotator() {
 
 export default function Hero() {
   const ref = useRef(null);
+  const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const textY = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const fade = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
@@ -137,9 +137,25 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <div className="hero__scene">
-          <CseScene />
-        </div>
+        <motion.div
+          className="hero__scene"
+          initial={{ opacity: 0, y: 30, scale: 0.96 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ delay: 0.5, duration: 0.9, ease: [0.2, 0.7, 0.2, 1] }}
+        >
+          <motion.figure
+            className="portrait"
+            animate={reduce ? undefined : { y: [0, -10, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <div className="portrait__frame">
+              <img src={profile.photo} alt={profile.photoAlt} />
+            </div>
+            <figcaption className="portrait__badge">
+              <i aria-hidden="true" /> {profile.roles[0]}
+            </figcaption>
+          </motion.figure>
+        </motion.div>
       </div>
 
       <motion.div

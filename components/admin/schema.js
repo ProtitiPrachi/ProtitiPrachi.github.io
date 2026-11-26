@@ -14,7 +14,7 @@ export const PAGES = [
   {
     id: "profile",
     label: "Profile & hero",
-    intro: "The first screen: your name, the typed roles, the one-line pitch, and the CV button.",
+    intro: "The first screen: your name, the typed roles, the one-line pitch, your photo and the CV button.",
     keys: ["profile"],
     blocks: [
       {
@@ -31,10 +31,20 @@ export const PAGES = [
       },
       {
         kind: "fields",
-        title: "CV",
+        title: "Photo & CV",
         description: "Uploads are committed together with your text when you publish.",
         path: ["profile"],
         fields: [
+          {
+            key: "photo",
+            label: "Profile photo",
+            type: "file",
+            accept: "image/*",
+            name: "profile",
+            wide: true,
+            hint: "Shown beside your name at the top of the page. A portrait (taller than wide) looks best.",
+          },
+          { key: "photoAlt", label: "Photo description (for screen readers)", type: "text", wide: true },
           {
             key: "cv",
             label: "CV file",

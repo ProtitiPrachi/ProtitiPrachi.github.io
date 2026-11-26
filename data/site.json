@@ -13,6 +13,8 @@
       "Researcher"
     ],
     "pitch": "A CSE student passionate about software development, quality assurance, and building practical solutions through technology.",
+    "photo": "profile.jpg",
+    "photoAlt": "Portrait of Protiti Sahajee Prachi",
     "about": "I'm a Computer Science and Engineering student at AIUB, working toward a career in quality assurance. I've done hands-on Selenium testing, debugging and statistical analysis, and research taught me to question every result before I trust it. I use the same habit on software: find defects early, improve quality, and help ship products people can rely on.",
     "email": "protitiprachi@gmail.com",
     "phone": "01330497737",
