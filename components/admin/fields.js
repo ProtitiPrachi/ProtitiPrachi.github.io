@@ -156,6 +156,8 @@ export function FieldInput({ field, value, onChange, uploads, stage }) {
           placeholder={field.placeholder}
           value={value ?? ""}
           onChange={(e) => onChange(e.target.value)}
+          // "example.com" would be read as a page on this site; links need their https://
+          onBlur={field.type === "url" ? () => value && !/^[a-z][a-z+.-]*:/i.test(value) && onChange(`https://${value.trim()}`) : undefined}
         />
       );
   }
