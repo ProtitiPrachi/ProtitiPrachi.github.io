@@ -57,13 +57,6 @@ from *deploying…* to *live*.
 /admin (your browser) ──GitHub API──▶ commit on main ──Actions──▶ npm run build ──▶ gh-pages ──▶ live site
 ```
 
-**One-time setup: create a token**
-
-1. GitHub → Settings → Developer settings → **Fine-grained tokens** → Generate new token.
-2. Repository access: *Only select repositories* → `ProtitiPrachi.github.io`.
-3. Permissions: **Contents: Read and write** and **Actions: Read and write**.
-4. Open `/admin`, paste the token, keep *Remember on this device* ticked if it is your own computer.
-
 **What you can do there**
 
 - Edit every section: profile and hero, about and stats, skills, projects (and the QA showcase card),
