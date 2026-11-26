@@ -88,7 +88,7 @@ export default function Nav() {
         <div className="nav__end">
           <span className="nav__status">
             <span className="dot" />
-            Open to QA roles
+            {profile.status}
           </span>
           <button
             className={`nav__toggle ${open ? "is-open" : ""}`}

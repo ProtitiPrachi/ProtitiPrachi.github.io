@@ -44,6 +44,15 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
+      # Honor cards flip over to show their certificate. Browsers cannot draw a PDF inside a
+      # small card, so render page 1 of every PDF to "<name>.pdf.png" next to it.
+      - name: Certificate previews
+        run: |
+          command -v pdftoppm >/dev/null || sudo apt-get install -y -qq poppler-utils >/dev/null
+          find out -name '*.pdf' -print0 | while IFS= read -r -d '' f; do
+            pdftoppm -png -r 110 -singlefile "$f" "$f" && echo "preview: $f.png"
+          done
+
       - name: Publish out/ to gh-pages
         working-directory: out
         run: |

@@ -25,6 +25,7 @@ export const PAGES = [
           { key: "firstName", label: "First name", type: "text" },
           { key: "middleName", label: "Middle name", type: "text" },
           { key: "lastName", label: "Last name", type: "text" },
+          { key: "status", label: "Status badge", type: "text", hint: "The pill at the top right of the menu, e.g. Open for Jobs." },
           { key: "roles", label: "Typed roles", type: "tags", wide: true, hint: "Shown one after another under your name." },
           { key: "pitch", label: "Pitch", type: "textarea", rows: 2, wide: true },
         ],
