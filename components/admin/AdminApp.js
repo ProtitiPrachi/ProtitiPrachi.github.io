@@ -416,15 +416,6 @@ function Login({ error, onSubmit }) {
         </label>
         {error ? <p className="adm-error">{error}</p> : null}
         <button type="submit" className="adm-btn adm-btn--solid">Sign in</button>
-        <details>
-          <summary>How do I get a token?</summary>
-          <ol>
-            <li>GitHub → Settings → Developer settings → <b>Fine-grained tokens</b> → Generate new token.</li>
-            <li>Repository access: <i>Only select repositories</i> → <code>{REPO.name}</code>.</li>
-            <li>Permissions: <b>Contents: Read and write</b> and <b>Actions: Read and write</b>.</li>
-            <li>Generate, copy, paste it here. Only you should have it; untick “Remember” on shared computers.</li>
-          </ol>
-        </details>
       </form>
     </div>
   );

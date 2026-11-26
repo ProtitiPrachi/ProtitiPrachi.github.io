@@ -595,20 +595,6 @@
   background: var(--ink);
 }
 
-.adm-login details {
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.adm-login summary {
-  cursor: pointer;
-}
-
-.adm-login ol {
-  list-style: decimal;
-  padding-left: 20px;
-}
-
 .adm-check {
   display: flex;
   align-items: center;
