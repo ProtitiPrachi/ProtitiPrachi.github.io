@@ -137,25 +137,27 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          className="hero__scene"
-          initial={{ opacity: 0, y: 30, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ delay: 0.5, duration: 0.9, ease: [0.2, 0.7, 0.2, 1] }}
-        >
-          <motion.figure
-            className="portrait"
-            animate={reduce ? undefined : { y: [0, -10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        {profile.photo && (
+          <motion.div
+            className="hero__scene"
+            initial={{ opacity: 0, y: 30, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.9, ease: [0.2, 0.7, 0.2, 1] }}
           >
-            <div className="portrait__frame">
-              <img src={profile.photo} alt={profile.photoAlt} />
-            </div>
-            <figcaption className="portrait__badge">
-              <i aria-hidden="true" /> {profile.roles[0]}
-            </figcaption>
-          </motion.figure>
-        </motion.div>
+            <motion.figure
+              className="portrait"
+              animate={reduce ? undefined : { y: [0, -10, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div className="portrait__frame">
+                <img src={profile.photo} alt={profile.photoAlt} />
+              </div>
+              <figcaption className="portrait__badge">
+                <i aria-hidden="true" /> {profile.roles[0]}
+              </figcaption>
+            </motion.figure>
+          </motion.div>
+        )}
       </div>
 
       <motion.div

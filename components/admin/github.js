@@ -106,17 +106,15 @@ export async function loadContent(token, ref = REPO.branch) {
 /**
  * Writes every change ({ path, base64 }) as a single commit through the Git Data API,
  * so a save with a new picture and edited text triggers one deploy, not two.
- * Refuses (ConflictError) if the content file changed since expectedSha, unless force.
+ * Refuses (ConflictError) if the content file changed since expectedSha; the caller merges and retries.
  */
-export async function commitChanges(token, { changes, message, expectedSha, force = false }) {
+export async function commitChanges(token, { changes, message, expectedSha }) {
   const head = await gh(token, `${R}/git/ref/heads/${REPO.branch}`);
   const parent = head.object.sha;
 
-  if (!force) {
-    const current = await gh(token, `${R}/contents/${CONTENT_PATH}?ref=${parent}`);
-    if (current.sha !== expectedSha) {
-      throw new ConflictError("The content file changed on GitHub since you opened the dashboard.");
-    }
+  const current = await gh(token, `${R}/contents/${CONTENT_PATH}?ref=${parent}`);
+  if (current.sha !== expectedSha) {
+    throw new ConflictError("The content file changed on GitHub since you opened the dashboard.");
   }
 
   const commit = await gh(token, `${R}/git/commits/${parent}`);

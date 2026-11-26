@@ -19,6 +19,24 @@ export const PAGES = [
     blocks: [
       {
         kind: "fields",
+        title: "Your photo",
+        description: "Shown beside your name at the top of the page. Upload a new one any time; it goes live when you publish.",
+        path: ["profile"],
+        fields: [
+          {
+            key: "photo",
+            label: "Profile photo",
+            type: "file",
+            accept: "image/*",
+            folder: "photos",
+            wide: true,
+            hint: "A portrait (taller than wide) looks best. JPG or PNG.",
+          },
+          { key: "photoAlt", label: "Photo description (for screen readers)", type: "text", wide: true },
+        ],
+      },
+      {
+        kind: "fields",
         title: "Identity",
         path: ["profile"],
         fields: [
@@ -32,20 +50,10 @@ export const PAGES = [
       },
       {
         kind: "fields",
-        title: "Photo & CV",
+        title: "CV",
         description: "Uploads are committed together with your text when you publish.",
         path: ["profile"],
         fields: [
-          {
-            key: "photo",
-            label: "Profile photo",
-            type: "file",
-            accept: "image/*",
-            name: "profile",
-            wide: true,
-            hint: "Shown beside your name at the top of the page. A portrait (taller than wide) looks best.",
-          },
-          { key: "photoAlt", label: "Photo description (for screen readers)", type: "text", wide: true },
           {
             key: "cv",
             label: "CV file",

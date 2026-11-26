@@ -18,6 +18,12 @@ export function setIn(obj, path, value) {
 
 const slug = (name) =>
   name.toLowerCase().replace(/\.[^.]+$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "file";
+/** First 8 hex chars of the file's SHA-256. */
+async function fingerprint(file) {
+  const hash = new Uint8Array(await crypto.subtle.digest("SHA-256", await file.arrayBuffer()));
+  return Array.from(hash.slice(0, 4), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
 const ext = (name) => (name.match(/\.([a-z0-9]+)$/i)?.[1] ?? "bin").toLowerCase();
 
 /** Where a site path (relative to public/) can be seen: a staged upload, or the deployed file. */
@@ -81,7 +87,9 @@ function FileField({ field, value, onChange, uploads, stage }) {
     }
     setError("");
     // A fixed name ("cv") replaces the file in place, so links people already have keep working.
-    const base = field.name ?? `${field.folder}/${slug(file.name)}`;
+    // Everything else gets a fingerprint of its contents in the name: a new or fixed file always
+    // has a new address, so no browser or GitHub Pages cache can keep showing the old one.
+    const base = field.name ?? `${field.folder}/${slug(file.name)}-${await fingerprint(file)}`;
     const sitePath = `${base}.${ext(file.name)}`;
     await stage(sitePath, file);
     onChange(sitePath);

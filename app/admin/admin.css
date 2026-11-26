@@ -212,11 +212,6 @@
   font-weight: 600;
 }
 
-.adm-btn--danger {
-  border-color: var(--coral);
-  color: var(--coral) !important;
-}
-
 .adm-btn--small {
   padding: 5px 12px;
   font-size: 13px;

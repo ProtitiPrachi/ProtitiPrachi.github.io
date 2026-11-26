@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PAGES } from "./schema";
 import { BlockView, setIn } from "./fields";
+import { merge3 } from "./merge";
 import {
   CONTENT_PATH, ConflictError, REPO, SITE_URL,
   commitChanges, contentHistory, deployRuns, fileToBase64, loadContent,
@@ -52,7 +53,7 @@ export default function AdminApp() {
   const [runs, setRuns] = useState(null);
   const [history, setHistory] = useState([]);
   const [saving, setSaving] = useState(false);
-  const [dialog, setDialog] = useState(null); // null | { conflict?: string, error?: string, done?: {...} }
+  const [dialog, setDialog] = useState(null); // null | { confirm } | { error } | { done }
   const [message, setMessage] = useState("");
   const [toast, setToast] = useState("");
   const toastTimer = useRef(0);
@@ -79,8 +80,13 @@ export default function AdminApp() {
       const saved = localStorage.getItem(DRAFT_KEY);
       if (saved) {
         const d = JSON.parse(saved);
-        if (serialize(d.content) !== serialize(loaded.content)) setRestore(d);
-        else localStorage.removeItem(DRAFT_KEY);
+        // drafts from before merging existed carry no base and cannot be merged safely
+        if (!d.base) localStorage.removeItem(DRAFT_KEY);
+        else {
+          const merged = merge3(d.base, d.content, loaded.content);
+          if (serialize(merged) !== serialize(loaded.content)) setRestore({ ...d, content: merged });
+          else localStorage.removeItem(DRAFT_KEY);
+        }
       }
       setPhase("ready");
     } catch (e) {
@@ -132,11 +138,11 @@ export default function AdminApp() {
   useEffect(() => {
     if (phase !== "ready" || restore) return;
     const t = window.setTimeout(() => {
-      if (dirty) localStorage.setItem(DRAFT_KEY, JSON.stringify({ at: Date.now(), content: draft }));
+      if (dirty) localStorage.setItem(DRAFT_KEY, JSON.stringify({ at: Date.now(), base: base.content, content: draft }));
       else localStorage.removeItem(DRAFT_KEY);
     }, 400);
     return () => window.clearTimeout(t);
-  }, [phase, draft, dirty, restore]);
+  }, [phase, draft, dirty, restore, base]);
 
   useEffect(() => {
     const warn = (e) => {
@@ -160,40 +166,42 @@ export default function AdminApp() {
     return names.length ? `Update ${names.join(", ")}` : "Update site content";
   };
 
-  const publish = async (force = false) => {
+  const publish = async () => {
     if (!draft || !base) return;
     setSaving(true);
-    try {
-      const changes = [
-        { path: CONTENT_PATH, base64: utf8ToBase64(draftText) },
-        ...usedUploads.map((p) => ({ path: `public/${p}`, base64: uploads[p].base64 })),
-      ];
-      const res = await commitChanges(token, {
-        changes,
-        message: (message || defaultMessage()).trim(),
-        expectedSha: base.sha,
-        force,
+    const message_ = (message || defaultMessage()).trim();
+    const files = usedUploads.map((p) => ({ path: `public/${p}`, base64: uploads[p].base64 }));
+    const save = (content, sha) =>
+      commitChanges(token, {
+        changes: [{ path: CONTENT_PATH, base64: utf8ToBase64(serialize(content)) }, ...files],
+        message: message_,
+        expectedSha: sha,
       });
-      setBase({ content: draft, sha: res.contentSha });
+    try {
+      let content = draft;
+      let res;
+      try {
+        res = await save(content, base.sha);
+      } catch (e) {
+        if (!(e instanceof ConflictError)) throw e;
+        // GitHub has newer content (another tab, device or update): keep both, then save again.
+        const latest = await loadContent(token);
+        content = merge3(base.content, draft, latest.content);
+        res = await save(content, latest.sha);
+        flash("Merged your edits with newer changes from GitHub.");
+      }
+      setBase({ content, sha: res.contentSha });
+      setDraft(content);
       setUploads({});
       setMessage("");
       localStorage.removeItem(DRAFT_KEY);
       setDialog({ done: res });
       window.setTimeout(refreshMeta, 3000);
     } catch (e) {
-      if (e instanceof ConflictError) setDialog({ conflict: e.message });
-      else setDialog({ error: e.message });
+      setDialog({ error: e instanceof ConflictError ? "GitHub changed again while saving. Press Publish once more." : e.message });
     } finally {
       setSaving(false);
     }
-  };
-
-  const loadLatest = async () => {
-    const latest = await loadContent(token);
-    setBase(latest);
-    setDraft(latest.content);
-    setDialog(null);
-    flash("Loaded the version on GitHub. Your edits were dropped.");
   };
 
   useEffect(() => {
@@ -337,15 +345,6 @@ export default function AdminApp() {
                 <p><a href={dialog.done.commitUrl} target="_blank" rel="noreferrer">See the commit on GitHub</a></p>
                 <div className="adm-modal__actions"><button type="button" className="adm-btn adm-btn--solid" onClick={() => setDialog(null)}>OK</button></div>
               </>
-            ) : dialog.conflict ? (
-              <>
-                <h2>Someone else changed the site</h2>
-                <p>{dialog.conflict} That can be another device, another tab, or a hand edit. Which version should win?</p>
-                <div className="adm-modal__actions">
-                  <button type="button" className="adm-btn" onClick={loadLatest}>Load theirs (drop mine)</button>
-                  <button type="button" className="adm-btn adm-btn--danger" disabled={saving} onClick={() => publish(true)}>Overwrite with mine</button>
-                </div>
-              </>
             ) : dialog.error ? (
               <>
                 <h2>Publishing failed</h2>
@@ -366,7 +365,7 @@ export default function AdminApp() {
                 </label>
                 <div className="adm-modal__actions">
                   <button type="button" className="adm-btn" onClick={() => setDialog(null)} disabled={saving}>Cancel</button>
-                  <button type="button" className="adm-btn adm-btn--solid" onClick={() => publish(false)} disabled={saving}>
+                  <button type="button" className="adm-btn adm-btn--solid" onClick={publish} disabled={saving}>
                     {saving ? "Publishing…" : "Publish"}
                   </button>
                 </div>
