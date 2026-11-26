@@ -12,15 +12,15 @@
       "Aspiring QA Engineer",
       "Researcher"
     ],
-    "pitch": "I break software on purpose, so your users never do it by accident.",
+    "pitch": "A CSE student passionate about software development, quality assurance, and building practical solutions through technology.",
     "about": "I'm a Computer Science and Engineering student at AIUB, working toward a career in quality assurance. I've done hands-on Selenium testing, debugging and statistical analysis, and research taught me to question every result before I trust it. I use the same habit on software: find defects early, improve quality, and help ship products people can rely on.",
     "email": "protitiprachi@gmail.com",
     "phone": "01330497737",
     "address": "Block C, Bashundhara R/A, Dhaka",
     "linkedin": "https://www.linkedin.com/in/protiti-sahajee-prachi-880313294",
     "linkedinLabel": "linkedin.com/in/protiti-sahajee-prachi",
-    "github": "",
-    "cv": "cv.jpg"
+    "github": "https://github.com/ProtitiPrachi",
+    "cv": "cv.pdf"
   },
   "stats": [
     {
@@ -64,7 +64,8 @@
         "C++",
         "HTML",
         "CSS",
-        "JavaScript"
+        "JavaScript",
+        "php"
       ]
     },
     {
@@ -96,26 +97,6 @@
   ],
   "projects": [
     {
-      "name": "SkillHub",
-      "kind": "Learning platform",
-      "date": "Jan – Feb 2026",
-      "duration": "1 month",
-      "image": "projects/skillhub.jpg",
-      "overview": "A learning platform where courses, lessons and progress live in one place, from the React screens through to the database.",
-      "stack": [
-        "React",
-        "Next.js",
-        "FastAPI",
-        "PostgreSQL"
-      ],
-      "points": [
-        "Built a full-stack learning platform with a React and Next.js front end.",
-        "Wrote the FastAPI backend on top of a PostgreSQL database."
-      ],
-      "github": "",
-      "live": ""
-    },
-    {
       "name": "Job Portal",
       "kind": "Web application",
       "date": "Apr – May 2026",
@@ -132,6 +113,26 @@
       "points": [
         "Developed a job portal web application with HTML, CSS, JavaScript and PHP.",
         "Stored jobs, applicants and accounts in a MySQL database."
+      ],
+      "github": "",
+      "live": ""
+    },
+    {
+      "name": "SkillHub",
+      "kind": "Learning platform",
+      "date": "Jan – Feb 2026",
+      "duration": "1 month",
+      "image": "projects/skillhub.jpg",
+      "overview": "A learning platform where courses, lessons and progress live in one place, from the React screens through to the database.",
+      "stack": [
+        "React",
+        "Next.js",
+        "FastAPI",
+        "PostgreSQL"
+      ],
+      "points": [
+        "Built a full-stack learning platform with a React and Next.js front end.",
+        "Wrote the FastAPI backend on top of a PostgreSQL database."
       ],
       "github": "",
       "live": ""
@@ -181,11 +182,11 @@
   },
   "research": [
     {
-      "year": "2025",
-      "title": "Quantifying the Risks of Self-Medication: A Statistical Analysis of Commonly Misused Drugs in Bangladesh",
-      "status": "Abstract published",
-      "venue": "National Biomedical & Health Research Conference (NBHRC)",
-      "summary": "Statistical analysis of commonly misused drugs in Bangladesh. Presented as an abstract and poster."
+      "year": "2026",
+      "title": "Explainable and Generalizable Deepfake Detection for Vishing Attack Recognition",
+      "status": "Paper accepted",
+      "venue": "I-COSTE 2026: Sustainable Technology for Humanity and Global Impact",
+      "summary": "Deepfake detection for recognizing voice phishing (vishing) attacks. Accepted for publication in the IEEE conference proceedings."
     },
     {
       "year": "2025",
@@ -195,11 +196,11 @@
       "summary": "A study of leadership and change in Bangladeshi higher education institutions."
     },
     {
-      "year": "2026",
-      "title": "Explainable and Generalizable Deepfake Detection for Vishing Attack Recognition",
-      "status": "Paper accepted",
-      "venue": "I-COSTE 2026: Sustainable Technology for Humanity and Global Impact",
-      "summary": "Deepfake detection for recognizing voice phishing (vishing) attacks. Accepted for publication in the IEEE conference proceedings."
+      "year": "2025",
+      "title": "Quantifying the Risks of Self-Medication: A Statistical Analysis of Commonly Misused Drugs in Bangladesh",
+      "status": "Abstract published",
+      "venue": "National Biomedical & Health Research Conference (NBHRC)",
+      "summary": "Statistical analysis of commonly misused drugs in Bangladesh. Presented as an abstract and poster."
     }
   ],
   "education": [
@@ -250,7 +251,7 @@
       "org": "AIUB Computer Club"
     },
     {
-      "role": "Volunteer",
+      "role": "Volunteer, Report Writer",
       "org": "AIUB Cyber Gaming Fest and CS Fest"
     },
     {
@@ -264,9 +265,7 @@
     "text": "Vocal training and cultural performances at Bangladesh Shilpakala Academy."
   },
   "marquee": [
-    "Open to QA roles",
-    "Dhaka, Bangladesh",
-    "Always testing",
-    "Say hello"
+    "Open for Jobs",
+    "Dhaka, Bangladesh"
   ]
 }
