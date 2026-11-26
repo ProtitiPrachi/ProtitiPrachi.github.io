@@ -125,7 +125,7 @@
       "kind": "Learning platform",
       "date": "Jan – Feb 2026",
       "duration": "1 month",
-      "image": "projects/skillhub.jpg",
+      "image": "projects/skillhub-b195a325.png",
       "overview": "A learning platform where courses, lessons and progress live in one place, from the React screens through to the database.",
       "stack": [
         "React",
@@ -145,7 +145,7 @@
       "kind": "Desktop application",
       "date": "Feb – May 2025",
       "duration": "4 months",
-      "image": "projects/zoo-management.jpg",
+      "image": "projects/zoo-ee709f97.png",
       "overview": "A desktop desk for day-to-day zoo work: tickets, memberships and transactions, tied to SQL Server.",
       "stack": [
         "C#",
