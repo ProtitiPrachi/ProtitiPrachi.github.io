@@ -104,7 +104,7 @@
       "kind": "Web application",
       "date": "Apr – May 2026",
       "duration": "1 month",
-      "image": "projects/job-portal-browse-jobs.png",
+      "image": "projects/hirehub-6f9e4f76.webp",
       "overview": "A job board where people search openings, keep accounts, and apply, with listings and applicants stored in MySQL.",
       "stack": [
         "HTML",
@@ -118,14 +118,14 @@
         "Stored jobs, applicants and accounts in a MySQL database."
       ],
       "github": "https://github.com/DURJOYSAHA21/Job-Portal-Live-Demo",
-      "live": "https://hirehub.infinityfreeapp.com/"
+      "live": "hirehub.infinityfreeapp.com/"
     },
     {
       "name": "SkillHub",
       "kind": "Learning platform",
       "date": "Jan – Feb 2026",
       "duration": "1 month",
-      "image": "projects/skillhub-landing.png",
+      "image": "projects/skillhub.jpg",
       "overview": "A learning platform where courses, lessons and progress live in one place, from the React screens through to the database.",
       "stack": [
         "React",
@@ -145,7 +145,7 @@
       "kind": "Desktop application",
       "date": "Feb – May 2025",
       "duration": "4 months",
-      "image": "projects/zoo-visitor-home.png",
+      "image": "projects/zoo-management.jpg",
       "overview": "A desktop desk for day-to-day zoo work: tickets, memberships and transactions, tied to SQL Server.",
       "stack": [
         "C#",
@@ -164,7 +164,7 @@
       "kind": "Desktop application",
       "date": "Feb – Apr 2024",
       "duration": "3 months",
-      "image": "projects/art-gallery-collection.png",
+      "image": "projects/artgallery-homepage-52ae8e57.png",
       "overview": "A desktop catalog for a gallery: artworks, artists and sales, with create, read, update and delete on a relational database.",
       "stack": [
         "Java",
