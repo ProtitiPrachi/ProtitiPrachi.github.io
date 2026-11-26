@@ -157,7 +157,7 @@
   align-items: center;
   gap: 12px;
   padding: 12px 28px;
-  background: rgba(8, 9, 13, 0.85);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }

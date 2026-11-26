@@ -43,6 +43,11 @@ export default function Research() {
               <h3 className="timeline__title">{r.title}</h3>
               <p className="timeline__venue">{r.venue}</p>
               <p className="timeline__summary">{r.summary}</p>
+              {r.link && (
+                <a href={r.link} target="_blank" rel="noreferrer" className="btn btn--small timeline__link">
+                  Read paper
+                </a>
+              )}
             </div>
           </Reveal>
         ))}

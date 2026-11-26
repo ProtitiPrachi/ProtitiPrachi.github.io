@@ -171,8 +171,8 @@
         "Developed a desktop application to manage artworks, artists and sales records.",
         "Implemented CRUD operations with a relational database for secure storage and retrieval."
       ],
-      "github": "",
-      "live": ""
+      "github": "https://github.com/ProtitiPrachi/ArtGalleryManagement",
+      "live": "https://protitiprachi.github.io/ArtGalleryManagement/"
     }
   ],
   "testingShowcase": {
@@ -186,21 +186,24 @@
       "title": "Explainable and Generalizable Deepfake Detection for Vishing Attack Recognition",
       "status": "Paper accepted",
       "venue": "I-COSTE 2026: Sustainable Technology for Humanity and Global Impact",
-      "summary": "Deepfake detection for recognizing voice phishing (vishing) attacks. Accepted for publication in the IEEE conference proceedings."
+      "summary": "Deepfake detection for recognizing voice phishing (vishing) attacks. Accepted for publication in the IEEE conference proceedings.",
+      "link": ""
     },
     {
       "year": "2025",
       "title": "Transformational Leadership and Organizational Change in Bangladeshi Higher Education Institutions",
       "status": "Abstract published",
       "venue": "7th International Conference on Integrated Sciences (ICIS)",
-      "summary": "A study of leadership and change in Bangladeshi higher education institutions."
+      "summary": "A study of leadership and change in Bangladeshi higher education institutions.",
+      "link": ""
     },
     {
       "year": "2025",
       "title": "Quantifying the Risks of Self-Medication: A Statistical Analysis of Commonly Misused Drugs in Bangladesh",
       "status": "Abstract published",
       "venue": "National Biomedical & Health Research Conference (NBHRC)",
-      "summary": "Statistical analysis of commonly misused drugs in Bangladesh. Presented as an abstract and poster."
+      "summary": "Statistical analysis of commonly misused drugs in Bangladesh. Presented as an abstract and poster.",
+      "link": ""
     }
   ],
   "education": [
@@ -226,23 +229,33 @@
   "honors": [
     {
       "title": "Dean's Award",
-      "by": "AIUB"
+      "by": "AIUB",
+      "certificate": "",
+      "certificateLink": ""
     },
     {
       "title": "IT Essentials",
-      "by": "Cisco Networking Academy"
+      "by": "Cisco Networking Academy",
+      "certificate": "",
+      "certificateLink": ""
     },
     {
       "title": "NBHRC 2025",
-      "by": "Presenting author, abstract and poster. Dhaka Medical College Research and Academic Club, Aug 2025"
+      "by": "Presenting author, abstract and poster. Dhaka Medical College Research and Academic Club, Aug 2025",
+      "certificate": "",
+      "certificateLink": ""
     },
     {
       "title": "I-COSTE 2026",
-      "by": "Certificate of paper acceptance. The paper will be published in the IEEE conference proceedings."
+      "by": "Certificate of paper acceptance. The paper will be published in the IEEE conference proceedings.",
+      "certificate": "",
+      "certificateLink": ""
     },
     {
       "title": "AIUB Programming Contest",
-      "by": "C++, Mar 2024"
+      "by": "C++, Mar 2024",
+      "certificate": "",
+      "certificateLink": ""
     }
   ],
   "activities": [
@@ -257,13 +270,12 @@
     {
       "role": "Volunteer",
       "org": "School community programs"
+    },
+    {
+      "role": "Singer",
+      "org": "Bangladesh Shilpakala Academy"
     }
   ],
-  "music": {
-    "role": "Singer",
-    "org": "Bangladesh Shilpakala Academy",
-    "text": "Vocal training and cultural performances at Bangladesh Shilpakala Academy."
-  },
   "marquee": [
     "Open for Jobs",
     "Dhaka, Bangladesh"

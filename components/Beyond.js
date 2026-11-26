@@ -1,7 +1,7 @@
 "use client";
 
 import Section, { Reveal } from "./Section";
-import { activities, music } from "../data/content";
+import { activities } from "../data/content";
 
 export default function Beyond() {
   return (
@@ -10,10 +10,9 @@ export default function Beyond() {
       index="07"
       kicker="Beyond code"
       title="Off the clock."
-      intro="Clubs, volunteering and a microphone."
+      intro="Clubs, volunteering and music."
     >
-      <div className="beyond">
-        <ul className="beyond__list">
+      <ul className="beyond__list">
           {activities.map((a, i) => (
             <Reveal as="li" key={a.org} delay={0.07 * i}>
               <span className="beyond__n">0{i + 1}</span>
@@ -23,21 +22,7 @@ export default function Beyond() {
               </div>
             </Reveal>
           ))}
-        </ul>
-
-        <Reveal delay={0.15} className="music">
-          <span className="music__tag">On stage</span>
-          <div className="music__eq" aria-hidden="true">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <span key={i} style={{ "--i": i }} />
-            ))}
-          </div>
-          <h3>
-            {music.role} · {music.org}
-          </h3>
-          <p>{music.text}</p>
-        </Reveal>
-      </div>
+      </ul>
     </Section>
   );
 }

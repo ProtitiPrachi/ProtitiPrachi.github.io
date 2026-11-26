@@ -18,7 +18,7 @@ npm run build    # writes the static site to out/
 ## What lives where
 
 - Every fact on the page (profile, stats, skills, projects, research, education, honors, activities,
-  music, contact, the scrolling banner, the page title and description) is data in **`data/site.json`**.
+  contact, the scrolling banner, the page title and description) is data in **`data/site.json`**.
   `data/content.js` exposes it to the components; the sections hold no copy of their own.
 - `/admin` (`app/admin/`, `components/admin/`) edits that file through the GitHub API with the owner's
   token: one commit per publish, conflict-checked, with local drafts, version history and deploy status.
@@ -60,9 +60,9 @@ from *deploying…* to *live*.
 **What you can do there**
 
 - Edit every section: profile and hero, about and stats, skills, projects (and the QA showcase card),
-  research, education, honors, activities and music, contact, and the page title / banner.
+  research (with a published-paper link), education, honors (with a certificate file or link), activities, contact, and the page title / banner.
 - Add, duplicate, delete and reorder (↑ ↓) any list item. Tags are chips: Enter or comma adds one.
-- Upload a new CV or project picture. A new CV keeps the name `cv.*`, so the link stays the same.
+- Upload a new CV, project picture or certificate. A new CV keeps the name `cv.*`, so the link stays the same.
 - See which sections have unpublished edits (gold dot), discard them, or publish with `Ctrl+S`.
 - **Drafts are kept on your device**: close the tab by accident and the dashboard offers to restore them.
 - **Version history**: load any earlier version into the editor and publish it to roll back.

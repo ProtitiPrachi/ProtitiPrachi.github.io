@@ -3,5 +3,5 @@ import site from "./site.json";
 
 export const {
   seo, profile, stats, skills, projects, testingShowcase,
-  research, education, honors, activities, music, marquee,
+  research, education, honors, activities, marquee,
 } = site;

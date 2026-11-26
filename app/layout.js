@@ -10,7 +10,7 @@ import { seo } from "../data/content";
 export const metadata = { title: seo.title, description: seo.description };
 
 export const viewport = {
-  themeColor: "#08090d",
+  themeColor: "#f5f0ff",
 };
 
 export default function RootLayout({ children }) {

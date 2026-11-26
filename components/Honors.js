@@ -41,6 +41,16 @@ export default function Honors() {
             <Medal />
             <h3>{h.title}</h3>
             <p>{h.by}</p>
+            {(h.certificate || h.certificateLink) && (
+              <a
+                href={h.certificate || h.certificateLink}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn--small honor__cert"
+              >
+                Certificate
+              </a>
+            )}
           </motion.li>
         ))}
       </motion.ul>
