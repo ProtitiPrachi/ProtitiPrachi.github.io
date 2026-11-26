@@ -13,8 +13,6 @@
       "Researcher"
     ],
     "pitch": "A CSE student passionate about software development, quality assurance, and building practical solutions through technology.",
-    "photo": "profile.jpg",
-    "photoAlt": "Portrait of Protiti Sahajee Prachi",
     "about": "I'm a Computer Science and Engineering student at AIUB, working toward a career in quality assurance. I've done hands-on Selenium testing, debugging and statistical analysis, and research taught me to question every result before I trust it. I use the same habit on software: find defects early, improve quality, and help ship products people can rely on.",
     "email": "protitiprachi@gmail.com",
     "phone": "01330497737",
@@ -238,25 +236,25 @@
     {
       "title": "IT Essentials",
       "by": "Cisco Networking Academy",
-      "certificate": "",
+      "certificate": "certificates/it-essentials-certificate-23-53227-3-student-aiub-edu-05941b15-5c9e-4f33-8210-245c414df112.pdf",
       "certificateLink": ""
     },
     {
       "title": "NBHRC 2025",
       "by": "Presenting author, abstract and poster. Dhaka Medical College Research and Academic Club, Aug 2025",
-      "certificate": "",
+      "certificate": "certificates/nbhrc-certificate-protitisahajeeprachi.pdf",
       "certificateLink": ""
     },
     {
       "title": "I-COSTE 2026",
       "by": "Certificate of paper acceptance. The paper will be published in the IEEE conference proceedings.",
-      "certificate": "",
+      "certificate": "certificates/onlinephotoscanner-26-18-31-37.pdf",
       "certificateLink": ""
     },
     {
       "title": "AIUB Programming Contest",
       "by": "C++, Mar 2024",
-      "certificate": "",
+      "certificate": "certificates/contest-certi.jpg",
       "certificateLink": ""
     }
   ],
